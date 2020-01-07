@@ -5,21 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TODO</title>
-    <style>
-        .done {
-            text-decoration: line-through;
-        }
-    </style>
+    <link rel="stylesheet" href="app.css">
 </head>
 <body>
-    <div>
+    <h2>Simple Todo List Example</h2>
+    <div class="form">
         <form action="/" method="post">
             @csrf
-            <input type="text" id="todo" maxlength="100">
+            <input type="text" id="todo" size="100" maxlength="100">
             <button type="button" id="add" disabled>Add Todo</button><br>
             <small id="help">Type in a new todo...</small>
         </form>
-        <div>
+        <div class="list">
             <ul id="todos">
                 @foreach ($todos as $todo)
                     <li>
