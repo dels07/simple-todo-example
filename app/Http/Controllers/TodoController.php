@@ -61,4 +61,17 @@ class TodoController extends Controller
 
         return 'deleted';
     }
+
+    /**
+     * Remove several resource from storage.
+     *
+     * @param array $ids
+     * @return \Illuminate\Http\Response
+     */
+    public function deleteMany(Request $request)
+    {
+        Todo::destroy($request->ids);
+
+        return 'deleted';
+    }
 }

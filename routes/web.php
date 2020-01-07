@@ -14,3 +14,4 @@
 Route::redirect('/', 'todo', 301);
 
 Route::apiResource('todo', 'TodoController');
+Route::post('todo/delete', 'TodoController@deleteMany');
