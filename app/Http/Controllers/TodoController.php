@@ -14,7 +14,9 @@ class TodoController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $todos = Todo::all();
+
+        return view('index', compact('todos'));
     }
 
     /**
@@ -44,7 +46,7 @@ class TodoController extends Controller
         $todo->done = !$todo->done;
         $todo->save();
 
-        return $todo->id;
+        return $todo->done ? 'true' : 'false';
     }
 
     /**
@@ -56,5 +58,7 @@ class TodoController extends Controller
     public function destroy(Todo $todo)
     {
         $todo->delete();
+
+        return 'deleted';
     }
 }
