@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/', 'todo', 301);
+
+Route::apiResource('todo', 'TodoController');
